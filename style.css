@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+.flex-container{
+    display: grid;
+    flex-direction: column;
+    color:blue;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+}
+
+.b1, .b2, .b3, .b4{
+    height: 97.5vh;
+    
+    border-right: 0.05rem solid white;
+    border-color: white;
+    border-width: 0.025rem;
+    transition: 0.3s;
+}
+
+.b1:hover, .b2:hover, .b3:hover, .b4:hover{
+    
+    background-color: white;
+        
+    
+      
+      
+
+}
+
