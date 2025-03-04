@@ -14,22 +14,39 @@
         <div class="flex-container">
             <div class = "b1">
                 <div class = "circle"></div>
+                <p class = "heading brand">Brand</p>
+                <p class = "small brand">Unique brand identities that make a mark.</p>
                 <i class="fas fa-arrow-right arr"></i>
             </div>
             <div class = "b2">
                 <div class = "circle"></div>
+                <p class = "heading product">Product</p>
+                <p class = "small product">Intuitive digital products that peoplee get.</p>
                 <i class="fas fa-arrow-right arr"></i>
             </div>
             <div class = "b3">
                 <div class = "circle"></div>
+                <p class = "heading motion">Motion</p>
+                <p class = "small motion">Compelling animation that inspires action.</p>
                 <i class="fas fa-arrow-right arr"></i>
             </div>
             <div class = "b4">
-                <div class = "circle"></div>
-                <i class="fas fa-arrow-right arr"></i>
+                <div class = "circle-text">
+                    <div class = "text">
+                        <p>WHAT WE DO-WHAT WE DO-WHAT WE DO-WHAT WE DO-</p>
+                    </div>
+                </div>
             </div>
         </div>
         
-
+        <script>
+            const text = document.querySelector('.text p');
+            text.innerHTML = text.innerText.split('').map(
+                (char, i) =>
+                `<span style = "transform:rotate(${i * 8.3}deg)">${char}</span>`
+        ).join('');
+        </script>
     </body>
-</html>
+
+
+    
