@@ -211,13 +211,15 @@
     }
 
 
-    @media (max-width: 700px){
+    @media only screen and (max-width: 640px) {
         .flex-container{
-            flex-direction:row;
+            display: grid;
+            flex-direction: row;
+            color:white;
             grid-template-rows: 1fr 1fr 1fr 1fr;
-    
-            justify-content: center;
+            
         }
-    }
+        
+      }
 
 
