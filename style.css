@@ -1,4 +1,4 @@
-@import "tailwindcss";
+
 .circle-text{
     position: relative;
     top:38%;
@@ -19,6 +19,10 @@
     animation: anim 60s linear infinite;
     
 }
+body{
+    margin: 0px;
+    padding:0px;
+}
 
 @keyframes anim{
     0%{
@@ -38,21 +42,23 @@
     display: grid;
     flex-direction: column;
     color:white;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 0.88fr;
     
 }
 .heading{
     font-family: Aeonikpro, sans-serif;
     font-size: 42px;
+    left:10%;
     color:white;
-    position: absolute;
-    top: 42.5%;
+    position: relative;
+    top:39%;
     padding-left: 2%;
 }
 .small{
-    position: absolute;
+    position: relative;
     top: 85%;
     padding-left:2%;
+    left:10%;
     color:black;
     transition:0.3s;
 }
@@ -61,10 +67,10 @@
     color:white;
     position: relative;
     left: 87%;
-    top:46.5%;
+    top: 32%;
     animation: appear-side 0.5s;
 }
-.b1, .b2, .b3, .b4{
+.b1, .b2, .b3,.b4{
     height: 97.5vh;
     
     border-right: 0.05rem solid white;
@@ -72,13 +78,27 @@
     border-width: 0.025rem;
     transition: 0.3s;
 }
+
+.b1.in-view .b1{
+    transform: translateX(0%); 
+}
+.b2.in-view .b2{
+    transform: translateX(0%); 
+}
+.b3.in-view .b3{
+    transform: translateX(0%); 
+}
+.b4.in-view .b4{
+    transform: translateX(0%); 
+}
+
 .circle{
     background-color:black;
     width: 30px;
     height: 30px;
     position: relative;
     left: 85%;
-    top:50%;
+    top: 45%;
     border: 1px solid white;
     border-radius: 50%;
 }
@@ -95,6 +115,87 @@
     
 
 }
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Aeonikpro, sans-serif;
+    
+  }
+  .container-nav{
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr 1fr;
+    height: 20px;
+    margin:auto;
+    top:0px;
+    position:fixed;
+    transition: linear 0.5s ease;
+    
+    width: 100vw;
+    background: rgba(10, 151, 5, 0);
+
+    z-index: 1000;  
+    transition: top 0.3s ease-in-out;  
+
+  }
+  .menu{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 10px;
+  }
+  .menu-div{
+    border-radius:50%;
+    background-color: white;
+    height: 7px;
+    margin-top: 200px;
+    margin: 5px;
+    width:7px;
+  }
+
+  .menu:hover .menu-div{
+    
+        background-color: #DBFF00;
+    
+    
+  }
+
+  .contactbtn{
+    z-index: 100;
+    border: 1px solid white;
+    background-color: #DBFF00;
+    color: black;
+    border-radius: 100px;
+    font-family: Aeonikpro, sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    
+    top:-20px;
+    
+    font-family: Aeonikpro, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    width:120px;
+    line-height: 1;
+    display: flex;
+    position: relative;
+    
+    overflow: hidden;
+  }
+
+  .contactbtn:hover{
+    background-color:black;
+    color:white;
+  }
+  
+  .logo, .name, .menu{
+    display:flex;
+    padding-top:20px;
+    margin:auto;
+    color: white;
+    opacity: 1;
+    
+    justify-content: center;
+  }
 .ball-2{
     position:absolute;
     top:47%;
@@ -107,34 +208,214 @@
     
 
 }
+.page-1{
+    height:60vh;
+    width: 100%;
+    margin-top:50px;
+    font-family:Aeonikpro, sans-serif;
+    color:white;
+    
+    padding: auto;
+}
 
-.b1:hover, .b2:hover, .b3:hover{
-    .arr{
+.line{
+    position:relative;
+    top: 55%;
+    left:2%;
+    padding-right:10px;
+    padding-left:10px;
+    border-width: 1px;
+    border-bottom: white;
+    height:10px;
+    background-color: white;
+    width:max-content;
+    border-color: white;
+    width:fit-content;
+    text-align: center;
+    
+}
+#myVideo {
+    object-fit: cover;
+    
+   
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+  }
+
+.text-main{
+    width:90%;
+    height: fit-content;
+    padding-left: 3%;
+    font-size:80px;
+    
+    display:grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    
+}
+.myVideodiv {
+    
+    cursor: none; /* Hide the default cursor when hovering */
+  }
+  
+  
+  
+  .circularcursor {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    color:white;
+    align-content: center;
+    text-align: center;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    visibility: hidden; /* Hide the custom cursor by default */
+  }
+  
+
+.b1:hover .arr{
+    
         color:white;
         position: relative;
         left: 87%;
-        top:46.5%;
+        top: 32%;
         rotate: -45deg;
         animation: appear 0.5s;
-        
     }
-    .heading{
+.b1:hover .heading{
+    
         color:black;
     }
-    .small{
-        position: absolute;
-        top: 85%;
+.b1:hover .small{
+        position: relative;
+        top: 75%;
         padding-left:2%;
         color:black;
         font-family: Aeonikpro, sans-serif;
         animation: appear-up 0.7s;
         
     }
+
+
+    .b2:hover .arr{
+    
+        color:white;
+        position: relative;
+        left: 87%;
+        top: 32%;
+        rotate: -45deg;
+        animation: appear 0.5s;
+    }
+.b2:hover  .heading{
+    
+        color:black;
+    }
+.b2:hover .small{
+        position: relative;
+        top: 75%;
+        padding-left:2%;
+        color:black;
+        font-family: Aeonikpro, sans-serif;
+        animation: appear-up 0.7s;
+        
+    }
+
+
+.b3:hover .arr{
+    
+        color:white;
+        position: relative;
+        left: 87%;
+        top: 32%;
+        rotate: -45deg;
+        animation: appear 0.5s;
+    }
+.b3:hover  .heading{
+        color:black;
+    }
+.b3:hover  .small{
+        position: relative;
+        top: 75%;
+        padding-left:2%;
+        color:black;
+        font-family: Aeonikpro, sans-serif;
+        animation: appear-up 0.7s;
+        
+    }
+    
+.b1:hover ~ .circle-text{
+    display:none;
+} 
+.b2:hover ~ .circle-text{
+    display:none;
+} 
+.b2:hover ~ .circle-text{
+    display:none;
+}   
+    
+    
+ .b1:hover, .b2:hover, .b3:hover{   
     background-color: white;
     
-
 }
 
+ 
+
+    
+
+
+
+
+#motion_vid, #prod_vid, #brand_vid{
+    
+    display:none;
+}
+body:has(.b1:hover) #brand_vid{
+    top:-29%;
+    display:flex;
+    position:relative;
+    width:inherit;
+    width:100%;
+    max-height: 100%;
+    } 
+
+body:has(.b2:hover) #prod_vid{
+    top:-29%;
+    display:flex;
+    position:relative;
+    width:inherit;
+    width:100%;
+    max-height: 100%;
+    
+    } 
+
+
+body:has(.b3:hover) #motion_vid{
+    
+    top:-29%;
+    display:flex;
+    position:relative;
+    width:inherit;
+    width:100%;
+    max-height: 100%;
+    
+    
+    min-height:100%;
+        
+        
+    }
+
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
 #container { margin: 0%; }
     
     #circle { 
@@ -210,6 +491,17 @@
         }
     }
 
+    @keyframes center-elem {
+        from{
+            transform: translateX(0%);
+        }
+        to{
+            transform: translateY(-50%);
+        }
+        
+    }
+
+
 
     @media only screen and (max-width: 640px) {
         .flex-container{
@@ -221,5 +513,52 @@
         }
         
       }
+
+
+
+
+      .overlay {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+      }
+      
+      /* Centered content inside the overlay */
+      .overlay-content {
+        padding: 20px;
+        background-color: #333;
+        border-radius: 8px;
+        width: 100vw;
+        height: 100vh;
+        margin: auto;
+      }
+      
+      button {
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        background-color: #f39c12;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      
+      button:hover {
+        background-color: #e67e22;
+      }
+
+
+
+
+
+
 
 
