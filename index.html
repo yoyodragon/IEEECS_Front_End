@@ -5,13 +5,87 @@
         Rocket Air.
     </title>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <link rel="stylesheet" href="style.css">
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        
         <script src="https://kit.fontawesome.com/d13dd759c8.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+
+    
+    
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay">
+      <div class="overlay-content">
+        <h1>Menu</h1>
+        <div><p>Coming Soon...</p></div>
+        <button id="close-overlay">Close</button>
+      </div>
+    </div>
+      
+      
+      
     <body style = "background-color: black;">
+        <div class = "container-nav" id = "container-nav">
+            <div class = "logo" style = "padding-top:5px;">
+              <img src = "logo.svg" style = "height: 30px;width: 30px;justify-content: left; padding-top: 0px;" />
+            </div>
+            <div class = "space"></div>
+            <div class = "name">
+                <button id = "contactbtn" class = "contactbtn">Get in touch.</button>
+            </div>
+            
+            
+                
+                    <button  id="open-overlay" style = "background: rgba(0,0,0,0); border-color: rgba(0,0,0,0);width:fit-content;height:fit-content;padding-top:0px;margin-top:0px;"> 
+                        <div class = "menu">
+                        <span>
+                    <div class = "menu-div" ></div>
+                    <div class = "menu-div" ></div>
+                </span>
+                
+                <span>
+                    <div class = "menu-div"></div>
+                    <div class = "menu-div" ></div>
+                </span>
+            </div>
+            </button>
+                
+            
+        </div>
+
+        <div class = "page-1" >
+            <div id = "" style = "width:90%;height: fit-content; padding-left: 3%; font-size:80px;" >Digital</div>
+            <div class = "text-main">
+                <div>experiences</div>
+                <div class = "line" style = "min-width:200px;width:inherit;height:1px;"></div>
+                <div>that</div>
+            </div> 
+            <div style = "width:100%;
+            justify-content: flex-end;
+             height: fit-content;
+              
+             padding-left: 3%;
+             display:grid;
+             grid-template-columns: 1.2fr 1fr;
+             
+              font-size:80px;
+              
+              "><span></span><span style = "align-content: center;width:90%;">Win by Design</span></div>
+            
+        </div>
+
+        <div class = "circularcursor" id = "circularcursor">Play</div>
+        <div class = "myVideodiv">
+        <video autoplay muted loop id="myVideo">
+            <source src="vid1.mp4" type="video/mp4">
+        </video>
+    </div>
+
         <div class="flex-container">
             <div class = "b1">
                 <div class = "circle"></div>
@@ -40,117 +114,23 @@
                         <p>WHAT WE DO-WHAT WE DO-WHAT WE DO-WHAT WE DO-</p>
                     </div>
                 </div>
+
+                <video autoPlay loop muted id="prod_vid">
+                    <source src="tall_product.mp4" type="video/mp4">
+                </video>
+
+                <video autoPlay  muted loop id="brand_vid">
+                    <source src="tall_brand.mp4" type="video/mp4">
+                </video>
+
+                <video autoPlay muted loop id="motion_vid">
+                    <source src="tall_motion.mp4" type="video/mp4">
+                </video>
                
             </div>
         </div>
-        <div class = "hint" id = "hint" style = "color:white;"></div>
-        <script>
-            //circle of words
-            const text = document.querySelector('.text p');
-            text.innerHTML = text.innerText.split('').map(
-                (char, i) =>
-                `<span style = "transform:rotate(${i * 8.3}deg)">${char}</span>`
-        ).join('');
-
-
-
-        var ball = document.getElementById('ball');
-var circle = document.getElementById('circle-text');
-var ball2 = document.getElementById('ball-2');
-var isMouseInside = false;
-
-
-function centerfollower() {
-    const rect = circle.getBoundingClientRect();
-    const x = circle.offsetWidth / 2; 
-    const y = circle.offsetHeight / 2; 
-    ball.style.left = `${x - ball.offsetWidth / 2}px`; 
-    ball.style.top = `${y - ball.offsetHeight / 2}px`; 
-}
-
-centerfollower();
-
-circle.addEventListener('mouseover', () => {
-    isMouseInside = true;
-    ball2.style.opacity = 0;
-    ball.style.background = "green";
-    ball.transition = "opacity 0s ";
-    ball.style.opacity = 1; 
-});
-
-circle.addEventListener('mouseleave', () => {
-    isMouseInside = false;
-    ball.style.opacity = 0; 
-    ball.transition = "opacity 0s ";
-    ball2.style.opacity = 1;
-    moveBallToCenter();
-});
-
-circle.addEventListener('mousemove', (e) => {
-    if (!isMouseInside) return; 
-
-    const rect = circle.getBoundingClientRect();
-    const targetX = e.clientX - rect.left;
-    const targetY = e.clientY - rect.top;
-
-  
-    function moveBall() {
-        const ballX = parseFloat(ball.style.left || 0);
-        const ballY = parseFloat(ball.style.top || 0);
-        const speed = 0.1; 
-        const dx = targetX - ballX;
-        const dy = targetY - ballY;
-
-        if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
-
-        ball.style.left = `${ballX + dx * speed}px`;
-        ball.style.top = `${ballY + dy * speed}px`;
-
-        requestAnimationFrame(moveBall); 
-    }
-
-    moveBall();
-});
-
-
-function moveBallToCenter() {
-    const rect = circle.getBoundingClientRect();
-    $(ball-1) = $("#ball");
-    $(ball-2) = $("#ball-2");
-    $(ball-1).css({
-    "position" : "absolute",
-    "left"     : $(ball-2).position().left,
-    "top"      : $(ball-2).position().top
-});
-    
-    const centerX = rect.left + rect.width / 2 - ball.offsetWidth / 2;
-    const centerY = rect.top + rect.height / 2 - ball.offsetHeight / 2;
-
-    
-    function animateReturn() {
-        const ballX = parseFloat(ball.style.left || 0);
-        const ballY = parseFloat(ball.style.top || 0);
-        const speed = 0.1;
-
-        const dx = centerX - ballX;
-        const dy = centerY - ballY;
-
-        if (Math.abs(dx) < 1 && Math.abs(dy) < 1) {
-            ball.style.left = `${centerX}px`;
-            ball.style.top = `${centerY}px`;
-            return; // Stop once we're at the center
-        }
         
-
-        ball.style.left = `${ballX + dx * speed}px`;
-        ball.style.top = `${ballY + dy * speed}px`;
-
-        requestAnimationFrame(animateReturn); 
-    }
-
-    animateReturn();
-}
-
+        <script src = "script.js">
         </script>
     </body>
 

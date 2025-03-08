@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+  <head>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+        
+      }
+      .container-nav{
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr 1fr;
+        height: 30px;
+        width: 100vw;
+        background: rgba(10, 151, 5, 0);
+
+        
+      }
+      
+      .logo, .name, .menu{
+        display:flex;
+        padding-top:10px;
+        
+        opacity: 1;
+        
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class = "container-nav">
+        <div class = "logo">
+          <img src = "logo.svg" />
+        </div>
+        <div class = "space"></div>
+        <div class = "name">home</div>
+        <div class = "menu">menu</div>
+    </div>
+  </body>
