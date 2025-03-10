@@ -1,5 +1,6 @@
 
 
+
 const text = document.querySelector('.text p');
   text.innerHTML = text.innerText.split('').map(
       (char, i) =>
@@ -20,9 +21,9 @@ const text = document.querySelector('.text p');
 
 
 
-
+  
   function centerfollower() {
-    const rect = circle.getBoundingClientRect();
+    
     const x = circle.offsetWidth / 2; 
     const y = circle.offsetHeight / 2; 
     ball.style.left = `${x - ball.offsetWidth / 2}px`; 
@@ -75,14 +76,7 @@ circle.addEventListener('mousemove', (e) => {
 
 
   function moveBallToCenter() {
-    const rect = circle.getBoundingClientRect();
-    $(ball-1) = $("#ball");
-    $(ball-2) = $("#ball-2");
-    $(ball-1).css({
-      "position" : "absolute",
-      "left"     : $(ball-2).position().left,
-      "top"      : $(ball-2).position().top
-  });
+    
 
   const centerX = rect.left + rect.width / 2 - ball.offsetWidth / 2;
   const centerY = rect.top + rect.height / 2 - ball.offsetHeight / 2;
@@ -188,16 +182,21 @@ overlay.style.display = 'none';
 
 
 //page 1 scroll animation
-const checkpoint = 300;
+const checkpoint = 300; // Scroll checkpoint
 
 window.addEventListener("scroll", () => {
-const currentScroll = window.scrollY;
-if (currentScroll <= checkpoint) {
-opacity = 1 - currentScroll / checkpoint;
-} else {
-opacity = 0;
-}
-document.querySelector(".page-1").style.opacity = opacity;
+  const currentScroll = window.scrollY; // Get the current scroll position
+  let opacity;
+
+  if (currentScroll <= checkpoint) {
+    opacity = 1 - currentScroll / checkpoint; // Reduce opacity as you scroll down
+  } else {
+    opacity = 0; // Set opacity to 0 after passing the checkpoint
+  }
+
+  // Apply the opacity to the element with the class 'page-1'
+  document.querySelector(".page-1").style.opacity = opacity;
 });
+
 
 
